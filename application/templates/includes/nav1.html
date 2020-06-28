@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FedChoice </title>
+</head>
+<style type="text/css">
+	.he
+	{
+	height: 100px;
+	width: 1365px;
+	float: left;	
+	background-color:black;
+	}
+	.he p
+	{
+		color: yellow;
+		padding-left: 130px;
+	}
+	.he p span
+	{
+		color: white;
+		padding-left: 8px;
+	}
+
+	.dropbtn {
+    
+    
+    padding: 7px;
+    font-size: 15px;
+    border: none;
+    margin-left: 40px;
+    background-color: yellow;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-left: 40px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #E59866 ;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: yellow;}
+
+.he upper ul
+	{
+	float: left;
+	margin-left: 130px;
+	background-color: yellow;
+	}
+	.he upper ul li
+	{
+	float: left;
+	list-style: none;
+	text-align:50px;
+	margin: 0 20px 0 20px;
+	font-family: arial;
+	color: #000; 
+	padding: 7px;
+	padding-left: 20px;
+
+	}
+upper ul li a
+{
+	text-decoration: none;
+	font-family: arial;
+	text-decoration-line: none;
+	color: #000; 
+	float: left;
+	margin-left: 100px;
+	padding-right: 50px;
+}
+</style>
+<body>
+	<div class="he">
+		<p>Swasth<span>Hospital</span></p>
+		<upper>
+		<ul>
+			<li><a href="">Home</li>
+			<div class="dropdown">
+				<button class="dropbtn">Login </button>
+				<div class="dropdown-content">
+					<a href=" {{url_for('login')}}">Admission desk executive</a>
+				    <a href="#">Pharmacist</a>
+				    <a href="">Diagnostic services executive</a>
+				   
+				</div>
+			</div>
+			<li><a href="#">About us</li>
+			<li><a href="#">Contact us</li>
+		</ul>
+	</upper>
+
+	</div>
+</body>
+</html>
