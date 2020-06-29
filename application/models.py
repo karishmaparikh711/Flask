@@ -1,5 +1,5 @@
 import flask
-from application import db
+from application import db, db1
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class Admin(db.Document):
