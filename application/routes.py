@@ -1,4 +1,4 @@
-from application import app, db
+from application import app, db, db1
 from flask import render_template, request, json, Response, redirect, flash, url_for, session
 from application.models import Patient,Admin
 from application.forms import LoginForm,CreateCustomer
@@ -10,31 +10,11 @@ def index():
 def admin():
   return render_template("admin.html")
 
-#@app.route("/login", methods=['GET','POST']) 
-#def login():
- #   if session.get('username'):
-  #      return redirect(url_for('index'))
+@app.route("/test")
+def test():
+    db1.user_collection.insert_one({"name": "John"})
+    return "Connected to the data base!"
 
-   # #form = LoginForm()
-    #if form.validate_on_submit():
-      #  email       = form.email.data
-       # password    = form.password.data
-
-        #user = User.objects(email=email).first()
-        #if user and user.get_password(password):
-         #   flash(f"{user.first_name}, you are successfully logged in!", "success")
-          #  session['user_id'] = user.user_id
-           # session['username'] = user.first_name
-            #return redirect("/index")
-   #     else:
-    #        flash("Sorry, something went wrong.","danger")
-    #return render_template("login.html", title="Login", form=form, login=True )
-
-#@app.route("/logout")
-#def logout():
- #   session['customer_id']=False
-  #  session.pop('username',None)
-   # return redirect(url_for('index'))
 @app.route("/createcustomer", methods=['POST','GET'])
 def register():
     if session.get('name'):
